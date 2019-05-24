@@ -1,0 +1,15 @@
+<h4>Login</h4>
+<form #loginForm="ngForm" (ngSubmit)="onSubmit()">
+  <p>
+    <label for="email">Email</label>
+    <input type="email" name="email" id="email"  [(ngModel)]="user.email" required email >
+  </p>
+<p>
+  <label for="password">Password</label>
+  <input type="password" name="password" id="password"  [(ngModel)]="user.password" required>
+</p>
+<button type="submit"  [disabled]="!loginForm.valid">Go!</button> <span *ngIf="isLoading">Login...</span>
+</form>
+<p *ngIf="errorMessage">{{errorMessage}}</p>
+<a href="javascript:;">Login with Google |</a>
+<a href="javascript:;">Login with Facebook</a>

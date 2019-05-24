@@ -1,0 +1,14 @@
+<nav>
+  <h3>LOGO</h3>
+  <a [routerLink]="[ '/' ]">Home</a>
+
+  <ng-container *ngIf="!user">
+  <a [routerLink]="[ '/', 'login' ]">Login</a>
+  <a [routerLink]="[ '/', 'signup' ]">Signup</a>
+</ng-container>
+  <ng-container *ngIf="user">
+    <span>Hello, {{user?.email}}</span>
+    <a href="javascript:;" (click)="logout()">Logout</a>
+  </ng-container>
+
+</nav>
