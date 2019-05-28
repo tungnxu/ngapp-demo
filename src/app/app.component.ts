@@ -9,8 +9,6 @@ import { Observable } from 'rxjs';
 })
 export class AppComponent {
   title = 'authen-app';
-  public authenAppDB$: Observable<any[]>;
-  constructor(private db: AngularFirestore) {
-    this.authenAppDB$ = db.collection('users').valueChanges();
+  constructor() {
   }
 }

@@ -1,0 +1,45 @@
+<h1>Tao bai viet moi</h1>
+
+
+
+<form #postForm="ngForm" (ngSubmit)="onSubmit()">
+    <p>
+        <label for="title">Tên bài viết</label>
+        <input type="text" name="title" id="title"  [(ngModel)]="newPost.title"  >
+      </p>
+
+      <p>
+          <label for="postSummary">Tóm tắt</label>
+          <input type="text" name="summary" id="summary"  [(ngModel)]="newPost.summary" >
+        </p>
+        <p>
+          <label for="thumbnail">Ảnh Thumnail</label>
+          <input type="text" name="thumbnail" id="thumbnail"  [(ngModel)]="newPost.thumbnail" >
+        </p>
+        <p>
+          <label for="slug">Slug</label>
+          <input type="text" name="slug" id="slug"  [(ngModel)]="newPost.slug" >
+        </p>
+        <p>
+            <label for="body">Nội dung bài viết</label>
+            <textarea name="body" id="body" [(ngModel)]="newPost.body"  cols="30" rows="10"></textarea>
+          </p>
+      <p>
+        <label for="">Phân loại</label>
+        <label *ngFor="let cat of categories">
+            <input type="radio" [(ngModel)]="selectedCat" name="clap" [value]="cat.categorySlug"> 
+            {{ cat.categoryName }}
+          </label>
+      </p>
+
+
+<button type="submit"  [disabled]="!postForm.valid">Đăng bài</button> 
+</form>
+<!-- 
+id?: string;
+title?: string; 
+summary?: string;
+thumbnail?: string;
+createdDate?: Date;
+slug?: string;
+readingTime?: number; -->

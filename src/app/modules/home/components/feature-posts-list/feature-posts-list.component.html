@@ -1,0 +1,9 @@
+<div>
+  feature-posts-list works!
+  <ul>
+    <li *ngFor="let item of item$ | async">
+     <a href="">{{item.title}}</a> 
+    </li>
+  </ul>
+  <button (click)="moreSlide()">More slide</button>
+</div>

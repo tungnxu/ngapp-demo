@@ -7,9 +7,10 @@ const routes: Routes = [
   {
     path: '', component: MainLayoutComponent, children: [
       {
-        path: '', loadChildren: './modules/home/home.module#HomeModule', canActivate: [AuthGuard]
+        path: '', loadChildren: './modules/home/home.module#HomeModule', //canActivate: [AuthGuard]
       },
       { path: '', loadChildren: './modules/auth/auth.module#AuthModule' },
+      { path: 'manage', loadChildren: './modules/management/management.module#ManagementModule'}
     ]
   },
   { path: '**', redirectTo: '', pathMatch: 'full' }

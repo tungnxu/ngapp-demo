@@ -8,6 +8,9 @@ import { MainLayoutComponent } from './layout/main-layout/main-layout.component'
 import { SharedModule } from '../shared/shared.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { AuthenticationService } from './authentication/authentication.service';
+import { AngularFireModule } from '@angular/fire';
+import { environment } from 'src/environments/environment';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
 
 @NgModule({
   declarations: [MainLayoutComponent],
@@ -16,7 +19,10 @@ import { AuthenticationService } from './authentication/authentication.service';
     HttpClientModule,
     CommonModule,
     CoreRoutingModule,
-    SharedModule
+    SharedModule,
+
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFirestoreModule,
   ],
   providers: [AuthenticationService]
 

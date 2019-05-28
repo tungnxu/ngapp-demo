@@ -1,0 +1,21 @@
+<!-- <ul>
+  <li *ngFor="let item of item2$ | async">
+   <p>{{item.categoryName}}</p>
+  </li>
+</ul> -->
+<p>
+  recent-posts-list works!
+</p>
+
+<ul>
+  <li *ngFor="let item of recentPosts ">
+    <h3>{{item.title}}</h3>
+    <h2>{{item.readingTime}}</h2>
+   <img [src]="item.thumbnail" alt="">
+   <p>{{item.summary}}</p>
+   <p>{{item?.ncategoryName}}</p>
+  </li>
+</ul>
+<button (click)="addItem()">Add Item</button>
+
+<button (click)="more()">More item</button>
